@@ -23,6 +23,9 @@ class e_wallet_to_e_wallet(e_wallet_to_e_walletTemplate):
         fore_money_depositor = anvil.server.call('get_accounts_emoney_using_wallet_id', depositor_wallet_id)
         #getting the reciever's details
         fore_money_sent = anvil.server.call('get_accounts_emoney_using_wallet_id',wallet_id)
+
+        if 
+      
         #calculating the money to be added in the recieve's end
         transfer_fianl_sent_amount= float(fore_money_sent['e_money']) + transfer_amount
         #calculating the money to be deducted in the depositor's end
