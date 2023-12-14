@@ -24,15 +24,18 @@ class e_wallet_to_e_wallet(e_wallet_to_e_walletTemplate):
         #getting the reciever's details
         fore_money_sent = anvil.server.call('get_accounts_emoney_using_wallet_id',wallet_id)
 
-        if 
-      
-        #calculating the money to be added in the recieve's end
-        transfer_fianl_sent_amount= float(fore_money_sent['e_money']) + transfer_amount
-        #calculating the money to be deducted in the depositor's end
-        transfer_amount_final = float(fore_money_depositor['e_money'])-transfer_amount
-        #setting the value
-        anvil.server.call('update_rows_emoney_trasaction',depositor_wallet_id, str(transfer_amount_final))
-        anvil.server.call('update_rows_emoney_trasaction',wallet_id, str(transfer_fianl_sent_amount))
+        if (transfer_amount < 5) or (transfer_amount > 50000):
+           self.label_4.text = "Tran should be between 5 and 50000 for a transfer Funds." 
+        else:
+           #calculating the money to be added in the recieve's end
+           transfer_fianl_sent_amount= float(fore_money_sent['e_money']) + transfer_amount
+           #calculating the money to be deducted in the depositor's end
+           transfer_amount_final = float(fore_money_depositor['e_money'])-transfer_amount
+           #setting the value
+           anvil.server.call('update_rows_emoney_trasaction',depositor_wallet_id, str(transfer_amount_final))
+           anvil.server.call('update_rows_emoney_trasaction',wallet_id, str(transfer_fianl_sent_amount))
+           self.label_4.text = "Money transferred successfully"
+           
       
         
         
