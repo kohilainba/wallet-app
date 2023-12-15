@@ -44,7 +44,7 @@ class auto_top_up(auto_top_upTemplate):
     self.button_1.visible = False
     self.button_2.visible = True
 
-  def deduct_currencies(amount):
+  def deduct_currencies(self, amount):
     currencies_table = app_tables.currencies.get(user=self.user['username'])
     if currencies_table['money_usd'] > 200:
         conversion = float(currencies_table['money_usd'])*80
