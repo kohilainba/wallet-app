@@ -195,12 +195,25 @@ def get_user_info(username):
     else:
         return None
 
+# @anvil.server.callable
+# def get_accounts_emoney_with_user(name):
+#   user_emoney= app_tables.accounts.get(user=name)
+#   return user_emoney
+
 @anvil.server.callable
 def get_accounts_emoney_with_user(name):
-  user_emoney= app_tables.accounts.get(user=name)
-  return user_emoney
-
-
+    user_emoney = app_tables.accounts.get(user=name)
+    if len(user_emoney) == 1:
+        return user_emoney[0]
+        print(f"Found user emoney: {result}")
+    elif len(user_emoney) > 1:
+        # Handle multiple matching rows here, either return a specific one or handle accordingly
+        # For example, return the first matching row
+        print("Multiple rows found. Handling only the first one.")
+        return user_emoney[0]
+    else:
+        # Handle the case where no rows are found for the given user
+        return None
     
     
         
