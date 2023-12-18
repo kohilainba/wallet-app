@@ -32,4 +32,7 @@ class audit_trail(audit_trailTemplate):
         filtered_actions = app_tables.actions.search(username=entered_user)
         self.repeating_panel_1.items = filtered_actions
 
+  def link_8_click(self, **event_args):
+    open_form('admin')
 
+ 
