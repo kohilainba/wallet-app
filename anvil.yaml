@@ -169,4 +169,18 @@ db_schema:
       admin_ui: {order: 2, width: 200}
       type: string
     title: Sevices
+  actions:
+    client: none
+    server: full
+    columns:
+    - name: username
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: modification
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: last_login
+      admin_ui: {width: 200, order: 2}
+      type: datetime
+    title: Actions
 renamed: true
