@@ -61,4 +61,16 @@ components:
 - type: FlowPanel
   properties: {}
   name: navbar_links
-  layout_properties: {slot: nav-right}
+  layout_properties: {slot: default}
+  components:
+  - name: textbox_search
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'POZJGA,KFAJIB'}
+  - name: button_1
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '#3FE5FF',
+      bold: false, underline: false, icon: 'fa:search'}
+    type: Button
+    layout_properties: {grid_position: 'POZJGA,YDIODU'}
